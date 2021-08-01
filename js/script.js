@@ -46,18 +46,38 @@ const quotes = [
   }
 ]
 
-console.log(quotes);
 
 /***
- * `getRandomQuote` function
+ * returns a random quote from quotes array based on a random number
 ***/
-
+function getRandomQuote() {
+  const max = quotes.length;
+  const randNumber = Math.floor(Math.random() * max);
+  return quotes[randNumber];
+}
 
 
 /***
- * `printQuote` function
+ * creates quote HTML and displays it on page
 ***/
+function printQuote() {
+  
+  const randomQuote = getRandomQuote();
 
+  let HTML = `<p class="quote"> ${randomQuote.quote} </p>
+  <p class="source"> ${randomQuote.source} `;
+
+  if (randomQuote.citation) {
+    HTML += `<span class="citation"> ${randomQuote.citation} </span>`;
+  }
+  if (randomQuote.year) {
+    HTML += `<span class="year"> ${randomQuote.year} </span>`;
+  }
+
+  HTML += "</p>";
+
+  document.getElementById('quote-box').innerHTML = HTML;
+}
 
 
 /***
