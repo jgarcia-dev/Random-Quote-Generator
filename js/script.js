@@ -90,7 +90,23 @@ function printQuote() {
     HTML += "</p>"
   }
 
+  randomBackgroundColor();
   document.getElementById('quote-box').innerHTML = HTML;
+}
+
+
+/***
+ * updates the pages background color with a random color
+***/
+function randomBackgroundColor() {
+  
+  // random integer value from 0 - 360
+  const hue = Math.floor(Math.random() * 361);
+
+  const sat = 70;
+  const bri = 35;
+
+  document.querySelector('body').style.backgroundColor = `hsl(${hue}, ${sat}%, ${bri}%)`;
 }
 
 
