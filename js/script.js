@@ -3,9 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 const quotes = [
   {
@@ -53,7 +50,7 @@ const quotes = [
 ]
 
 /***
- * timer
+ * interval timer for quotes
 ***/
 var myTimer = window.setInterval(printQuote, 10000);
 
@@ -77,6 +74,7 @@ function printQuote() {
   clearInterval(myTimer);
   myTimer = window.setInterval(printQuote, 10000);
 
+  // get and display quote
   const randomQuote = getRandomQuote();
   const numOfTags = randomQuote.tags.length;
 
