@@ -52,6 +52,11 @@ const quotes = [
   }
 ]
 
+/***
+ * timer
+***/
+var myTimer = window.setInterval(printQuote, 10000);
+
 
 /***
  * returns a random quote object from quotes array based on a random number
@@ -64,10 +69,14 @@ function getRandomQuote() {
 
 
 /***
- * creates quote HTML and displays it on page
+ * creates quote HTML and displays it on page, will restart timer
 ***/
 function printQuote() {
-  
+
+  // clear and restart timer
+  clearInterval(myTimer);
+  myTimer = window.setInterval(printQuote, 10000);
+
   const randomQuote = getRandomQuote();
   const numOfTags = randomQuote.tags.length;
 
